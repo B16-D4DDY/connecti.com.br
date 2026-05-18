@@ -1,11 +1,331 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portrait — André Matos</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portrait - Transforme seu iPad em um elegante porta-retratos digital com slideshow automático, molduras e modo noturno.">
+    <title>Portrait - Porta-Retratos Digital para iPad</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8f9fa;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 3em;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        header p {
+            font-size: 1.3em;
+            margin-bottom: 40px;
+            opacity: 0.95;
+        }
+
+        .app-icon {
+            width: 120px;
+            height: 120px;
+            border-radius: 27px;
+            margin: 0 auto 30px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 60px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+        }
+
+        .download-btn {
+            display: inline-block;
+            background: white;
+            color: #667eea;
+            padding: 15px 40px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1em;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .download-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+
+        /* Features */
+        .features {
+            padding: 80px 20px;
+            background: white;
+        }
+
+        .features h2 {
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 60px;
+            color: #2c3e50;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .feature {
+            text-align: center;
+            padding: 30px;
+        }
+
+        .feature-icon {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+
+        .feature h3 {
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+
+        .feature p {
+            color: #666;
+            font-size: 1.05em;
+        }
+
+        /* Pricing */
+        .pricing {
+            padding: 80px 20px;
+            background: #f8f9fa;
+            text-align: center;
+        }
+
+        .pricing h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #2c3e50;
+        }
+
+        .pricing-subtitle {
+            font-size: 1.2em;
+            color: #666;
+            margin-bottom: 50px;
+        }
+
+        .price-box {
+            background: white;
+            border-radius: 20px;
+            padding: 50px 40px;
+            max-width: 400px;
+            margin: 0 auto;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+
+        .trial-badge {
+            display: inline-block;
+            background: #10b981;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9em;
+            margin-bottom: 20px;
+        }
+
+        .price {
+            font-size: 3em;
+            font-weight: 700;
+            color: #667eea;
+            margin: 20px 0;
+        }
+
+        .price-note {
+            color: #666;
+            font-size: 1em;
+            margin-bottom: 30px;
+        }
+
+        .feature-list {
+            text-align: left;
+            margin: 30px 0;
+        }
+
+        .feature-list li {
+            padding: 10px 0;
+            list-style: none;
+            color: #555;
+        }
+
+        .feature-list li:before {
+            content: "✓ ";
+            color: #10b981;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        /* Footer */
+        footer {
+            background: #2c3e50;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .footer-links {
+            margin: 20px 0;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            opacity: 0.8;
+            transition: opacity 0.2s;
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2em;
+            }
+
+            header p {
+                font-size: 1.1em;
+            }
+
+            .features h2, .pricing h2 {
+                font-size: 2em;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
-  <!-- Conteúdo da página Portrait -->
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="app-icon">🖼️</div>
+            <h1>Portrait</h1>
+            <p>Transforme seu iPad em um elegante porta-retratos digital</p>
+            <a href="#" class="download-btn">📱 Baixar na App Store</a>
+        </div>
+    </header>
+
+    <!-- Features -->
+    <section class="features">
+        <div class="container">
+            <h2>Recursos Premium</h2>
+            <div class="features-grid">
+                <div class="feature">
+                    <div class="feature-icon">🎨</div>
+                    <h3>7 Estilos de Moldura</h3>
+                    <p>Clássica, Moderna, Polaroid, Museu, Sombra, Vintage ou sem moldura</p>
+                </div>
+
+                <div class="feature">
+                    <div class="feature-icon">🌙</div>
+                    <h3>Modo Noturno</h3>
+                    <p>Redução automática de brilho e vídeos sem som durante a noite</p>
+                </div>
+
+                <div class="feature">
+                    <div class="feature-icon">☁️</div>
+                    <h3>Álbuns Compartilhados</h3>
+                    <p>Sincronização automática via iCloud Photos entre seus dispositivos</p>
+                </div>
+
+                <div class="feature">
+                    <div class="feature-icon">🎬</div>
+                    <h3>Fotos e Vídeos</h3>
+                    <p>Reprodução completa de vídeos com transições suaves</p>
+                </div>
+
+                <div class="feature">
+                    <div class="feature-icon">⚙️</div>
+                    <h3>Totalmente Configurável</h3>
+                    <p>Timer, ordem de reprodução, múltiplos álbuns e todas as orientações</p>
+                </div>
+
+                <div class="feature">
+                    <div class="feature-icon">🔒</div>
+                    <h3>100% Privado</h3>
+                    <p>Suas fotos nunca saem do seu dispositivo. Tudo é local e seguro.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="pricing">
+        <div class="container">
+            <h2>Preço Justo</h2>
+            <p class="pricing-subtitle">Pagamento único, sem assinaturas</p>
+            
+            <div class="price-box">
+                <div class="trial-badge">15 DIAS GRÁTIS</div>
+                <div class="price">R$ 24,90</div>
+                <p class="price-note">Pagamento único • Acesso vitalício</p>
+                
+                <ul class="feature-list">
+                    <li>Teste grátis de 15 dias</li>
+                    <li>Todas as molduras premium</li>
+                    <li>Modo noturno automático</li>
+                    <li>Suporte a vídeos</li>
+                    <li>Álbuns compartilhados</li>
+                    <li>Atualizações futuras incluídas</li>
+                    <li>Sem anúncios, para sempre</li>
+                </ul>
+
+                <a href="#" class="download-btn">Começar Teste Grátis</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Portrait. Todos os direitos reservados.</p>
+            <div class="footer-links">
+                <a href="termos/">Termos de Serviço</a>
+                <a href="privacidade/">Política de Privacidade</a>
+                <a href="mailto:suporte@connecti.com.br">Suporte</a>
+            </div>
+            <p style="margin-top: 20px; opacity: 0.7; font-size: 0.9em;">
+                Feito com ❤️ para dar nova vida a iPads antigos
+            </p>
+        </div>
+    </footer>
 </body>
 </html>

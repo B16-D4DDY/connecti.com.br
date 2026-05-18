@@ -1,11 +1,343 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Política de Privacidade — André Matos</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Política de Privacidade - Portrait</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.8;
+            color: #333;
+            background: #f8f9fa;
+        }
+
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .back-link {
+            display: inline-block;
+            color: white;
+            text-decoration: none;
+            margin-top: 20px;
+            opacity: 0.9;
+            transition: opacity 0.2s;
+        }
+
+        .back-link:hover {
+            opacity: 1;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 60px 20px;
+            background: white;
+        }
+
+        .update-date {
+            color: #666;
+            font-size: 0.95em;
+            margin-bottom: 40px;
+        }
+
+        h2 {
+            color: #2c3e50;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+        }
+
+        h3 {
+            color: #34495e;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+
+        p {
+            margin-bottom: 15px;
+            color: #555;
+        }
+
+        ul {
+            margin: 15px 0 15px 40px;
+        }
+
+        li {
+            margin-bottom: 10px;
+            color: #555;
+        }
+
+        .privacy-badge {
+            background: #d1fae5;
+            border-left: 4px solid #10b981;
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 4px;
+        }
+
+        .privacy-badge strong {
+            color: #065f46;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        table th, table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+
+        table th {
+            background: #667eea;
+            color: white;
+        }
+
+        footer {
+            background: #2c3e50;
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+    </style>
 </head>
 <body>
-  <!-- Conteúdo da Política de Privacidade -->
+    <header>
+        <h1>Política de Privacidade</h1>
+        <p>Portrait - Porta-Retratos Digital</p>
+        <a href="../" class="back-link">← Voltar para o site</a>
+    </header>
+
+    <div class="container">
+        <p class="update-date">Última atualização: 18 de maio de 2026</p>
+
+        <div class="privacy-badge">
+            <strong>🔒 Resumo de Privacidade:</strong> O Portrait foi projetado com privacidade em primeiro lugar. Suas fotos NUNCA saem do seu dispositivo. Não coletamos, armazenamos ou compartilhamos suas imagens. Tudo funciona localmente.
+        </div>
+
+        <h2>1. Introdução</h2>
+        <p>A Connecti ("nós", "nosso" ou "empresa") respeita sua privacidade e está comprometida em proteger seus dados pessoais. Esta Política de Privacidade explica como o aplicativo Portrait ("App") lida com suas informações.</p>
+
+        <p><strong>Em resumo:</strong> O Portrait é um aplicativo focado em privacidade que não coleta suas fotos ou vídeos.</p>
+
+        <h2>2. Dados que NÃO Coletamos</h2>
+        <p>O Portrait foi projetado para NÃO coletar os seguintes dados:</p>
+        <ul>
+            <li>❌ Suas fotos ou vídeos</li>
+            <li>❌ Metadados de imagens (localização, data, câmera)</li>
+            <li>❌ Conteúdo dos álbuns</li>
+            <li>❌ Nomes de pessoas em fotos</li>
+            <li>❌ Dados biométricos ou reconhecimento facial</li>
+            <li>❌ Histórico de navegação</li>
+            <li>❌ Localização em tempo real</li>
+            <li>❌ Contatos ou calendário</li>
+            <li>❌ Dados de outros aplicativos</li>
+        </ul>
+
+        <h2>3. Dados que Coletamos</h2>
+        <p>O Portrait coleta apenas dados mínimos e essenciais para funcionar:</p>
+
+        <table>
+            <tr>
+                <th>Dado</th>
+                <th>Finalidade</th>
+                <th>Armazenamento</th>
+            </tr>
+            <tr>
+                <td><strong>Data de instalação</strong></td>
+                <td>Calcular período de teste grátis (15 dias)</td>
+                <td>Local (Keychain do iOS)</td>
+            </tr>
+            <tr>
+                <td><strong>Preferências do app</strong></td>
+                <td>Salvar configurações (álbuns, molduras, timer, etc.)</td>
+                <td>Local (UserDefaults do iOS)</td>
+            </tr>
+            <tr>
+                <td><strong>Status da compra</strong></td>
+                <td>Verificar se o premium foi desbloqueado</td>
+                <td>Apple (StoreKit)</td>
+            </tr>
+        </table>
+
+        <p><strong>Importante:</strong> Todos esses dados ficam armazenados APENAS no seu dispositivo ou nos sistemas da Apple. Nunca são enviados para nossos servidores.</p>
+
+        <h2>4. Como Suas Fotos São Acessadas</h2>
+        <p>O Portrait precisa de permissão para acessar sua biblioteca de fotos, mas:</p>
+
+        <h3>4.1. Acesso Local Apenas:</h3>
+        <ul>
+            <li>As fotos são lidas diretamente do seu dispositivo</li>
+            <li>Nenhuma foto é copiada, modificada ou transferida</li>
+            <li>O processamento acontece 100% localmente</li>
+            <li>Não há upload para a internet ou nuvem da Connecti</li>
+        </ul>
+
+        <h3>4.2. Permissões Solicitadas:</h3>
+        <ul>
+            <li><strong>Leitura de Fotos:</strong> Para exibir imagens no slideshow</li>
+            <li><strong>Adicionar Fotos (opcional):</strong> Para criar álbuns compartilhados</li>
+        </ul>
+
+        <p>Você pode revogar essas permissões a qualquer momento em: <strong>Ajustes > Portrait > Fotos</strong></p>
+
+        <h2>5. Álbuns Compartilhados via iCloud</h2>
+        <p>Quando você usa álbuns compartilhados do iCloud Photos:</p>
+        <ul>
+            <li>A sincronização é feita pela Apple, não pela Connecti</li>
+            <li>Seus dados trafegam pela infraestrutura segura da Apple</li>
+            <li>Aplicam-se os <a href="https://www.apple.com/br/privacy/" target="_blank">Termos de Privacidade da Apple</a></li>
+            <li>Você controla quem tem acesso aos álbuns compartilhados</li>
+            <li>A Connecti não tem acesso a esses álbuns ou dados sincronizados</li>
+        </ul>
+
+        <h2>6. Compras e Pagamentos</h2>
+        <p>Todas as transações são processadas pela Apple através da App Store:</p>
+        <ul>
+            <li>A Connecti NÃO recebe ou armazena dados de cartão de crédito</li>
+            <li>A Connecti NÃO tem acesso às suas informações de pagamento</li>
+            <li>Todas as compras seguem a Política de Privacidade da Apple</li>
+            <li>Histórico de compras fica no seu Apple ID</li>
+        </ul>
+
+        <h2>7. Cookies e Rastreamento</h2>
+        <p>O aplicativo Portrait NÃO usa:</p>
+        <ul>
+            <li>❌ Cookies de rastreamento</li>
+            <li>❌ SDKs de analytics de terceiros</li>
+            <li>❌ Rastreamento de anúncios</li>
+            <li>❌ Identificadores de dispositivo para marketing</li>
+            <li>❌ Pixels de conversão</li>
+        </ul>
+
+        <h2>8. Compartilhamento de Dados</h2>
+        <p><strong>A Connecti NÃO compartilha seus dados com terceiros.</strong> Ponto final.</p>
+
+        <p>Os únicos parceiros envolvidos são:</p>
+        <ul>
+            <li><strong>Apple:</strong> Para distribuição (App Store) e compras (StoreKit)</li>
+        </ul>
+
+        <p>Nenhum outro terceiro tem acesso aos seus dados.</p>
+
+        <h2>9. Segurança dos Dados</h2>
+        <p>Medidas de segurança implementadas:</p>
+        <ul>
+            <li>✅ Dados armazenados localmente com criptografia do iOS</li>
+            <li>✅ Keychain protegido por senha/biometria do dispositivo</li>
+            <li>✅ Nenhuma comunicação com servidores externos</li>
+            <li>✅ Código auditável (disponível mediante solicitação)</li>
+            <li>✅ Sem login ou criação de conta</li>
+        </ul>
+
+        <h2>10. Dados de Menores de Idade</h2>
+        <p>O Portrait é seguro para todas as idades:</p>
+        <ul>
+            <li>Não coletamos intencionalmente dados de menores de 13 anos</li>
+            <li>O app não requer cadastro ou identificação</li>
+            <li>Pais/responsáveis controlam o acesso às fotos via iOS</li>
+            <li>Não há conteúdo gerado por terceiros ou interação social</li>
+        </ul>
+
+        <h2>11. Seus Direitos (LGPD/GDPR)</h2>
+        <p>Mesmo não coletando dados pessoais significativos, você tem direito a:</p>
+        <ul>
+            <li><strong>Acesso:</strong> Ver quais dados estão armazenados (tudo é local no seu dispositivo)</li>
+            <li><strong>Correção:</strong> Alterar configurações a qualquer momento no app</li>
+            <li><strong>Exclusão:</strong> Desinstalar o app remove todos os dados</li>
+            <li><strong>Portabilidade:</strong> Suas fotos permanecem na biblioteca do iOS</li>
+            <li><strong>Oposição:</strong> Revogar permissões em Ajustes > Portrait</li>
+        </ul>
+
+        <h2>12. Retenção de Dados</h2>
+        <ul>
+            <li>Dados locais: permanecem até você desinstalar o app</li>
+            <li>Data de instalação (Keychain): pode sobreviver à desinstalação do app</li>
+            <li>Status de compra: mantido pela Apple enquanto seu Apple ID existir</li>
+        </ul>
+
+        <p>Para deletar completamente a data de instalação, você pode restaurar o dispositivo ou removê-la manualmente do Keychain do iOS.</p>
+
+        <h2>13. Atualizações desta Política</h2>
+        <p>Podemos atualizar esta Política de Privacidade periodicamente. Quando isso acontecer:</p>
+        <ul>
+            <li>A data "Última atualização" no topo será alterada</li>
+            <li>Mudanças significativas serão notificadas no app</li>
+            <li>Você pode revisar a política a qualquer momento neste site</li>
+        </ul>
+
+        <h2>14. Transferência Internacional de Dados</h2>
+        <p>Como o Portrait não envia dados para servidores externos:</p>
+        <ul>
+            <li>Não há transferência internacional de dados pessoais</li>
+            <li>Seus dados permanecem no seu dispositivo (Brasil ou onde você estiver)</li>
+            <li>Sincronização iCloud segue políticas da Apple</li>
+        </ul>
+
+        <h2>15. Contato e Dúvidas</h2>
+        <p>Para questões sobre privacidade, direitos de dados ou preocupações:</p>
+
+        <p><strong>Email:</strong> privacidade@connecti.com.br<br>
+        <strong>Email Suporte:</strong> suporte@connecti.com.br<br>
+        <strong>Website:</strong> <a href="../">connecti.com.br/portrait</a></p>
+
+        <p>Responderemos sua solicitação em até 5 dias úteis.</p>
+
+        <h2>16. Conformidade Legal</h2>
+        <p>Esta Política de Privacidade está em conformidade com:</p>
+        <ul>
+            <li>LGPD - Lei Geral de Proteção de Dados (Brasil)</li>
+            <li>GDPR - General Data Protection Regulation (Europa)</li>
+            <li>CCPA - California Consumer Privacy Act (EUA)</li>
+            <li>Apple App Store Review Guidelines</li>
+        </ul>
+
+        <div class="privacy-badge">
+            <strong>🛡️ Compromisso com sua privacidade:</strong> O Portrait foi desenvolvido com privacidade como prioridade número um. Não temos interesse em seus dados pessoais. Queremos apenas que você aproveite suas memórias com tranquilidade.
+        </div>
+
+        <h2>17. Transparência</h2>
+        <p>Você pode verificar o que o Portrait faz:</p>
+        <ul>
+            <li>Analise as permissões solicitadas em Ajustes > Portrait</li>
+            <li>Monitore o tráfego de rede (não verá nenhum)</li>
+            <li>Revise o código (disponível mediante NDA para auditores)</li>
+        </ul>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Portrait by Connecti. Todos os direitos reservados.</p>
+        <p style="margin-top: 15px;">
+            <a href="../">Início</a>
+            <a href="../termos/">Termos</a>
+            <a href="mailto:privacidade@connecti.com.br">Privacidade</a>
+        </p>
+    </footer>
 </body>
 </html>
