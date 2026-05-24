@@ -5,116 +5,287 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="../../imagens/Portrait-favicon.png" />
     <title>Termos de Serviço - Portrait</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        :root {
+            --purple-deep: #3b1f6b;
+            --purple-mid: #5b3a9b;
+            --purple-vivid: #7c4dcc;
+            --purple-light: #9b6ee8;
+            --purple-glow: #b388ff;
+            --gold: #e8c87a;
+            --gold-light: #f5e0a0;
+            --cream: #faf8f5;
+            --white: #ffffff;
+            --text-dark: #1a1025;
+            --text-mid: #3d2960;
+            --text-muted: #7a6a99;
+            --green: #10b981;
         }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            font-family: 'DM Sans', sans-serif;
+            background: var(--cream);
+            color: var(--text-dark);
             line-height: 1.8;
-            color: #333;
-            background: #f8f9fa;
         }
 
+        /* ── HEADER ── */
         header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 40px 20px;
+            background: linear-gradient(155deg, #1a0a3d 0%, #3b1f6b 40%, #5b3a9b 70%, #7c4dcc 100%);
+            position: relative;
+            overflow: hidden;
+            padding: 64px 40px 56px;
             text-align: center;
         }
 
-        header h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
+        header::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 70% 60% at 80% 20%, rgba(179,136,255,0.18) 0%, transparent 60%),
+                radial-gradient(ellipse 40% 50% at 10% 80%, rgba(91,58,155,0.35) 0%, transparent 55%);
+        }
+
+        .header-inner {
+            position: relative;
+            z-index: 1;
+            max-width: 760px;
+            margin: 0 auto;
         }
 
         .back-link {
-            display: inline-block;
-            color: white;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: rgba(255,255,255,0.7);
             text-decoration: none;
-            margin-top: 20px;
-            opacity: 0.9;
-            transition: opacity 0.2s;
+            font-size: 0.88em;
+            font-weight: 500;
+            margin-bottom: 28px;
+            transition: color 0.2s;
+            letter-spacing: 0.02em;
         }
 
-        .back-link:hover {
-            opacity: 1;
+        .back-link:hover { color: white; }
+
+        .header-logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 20px;
         }
 
-        .container {
+        .header-logo img {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+
+        .header-logo-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6em;
+            font-weight: 700;
+            color: white;
+        }
+
+        header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.6em;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 10px;
+            line-height: 1.2;
+        }
+
+        .header-sub {
+            color: rgba(255,255,255,0.65);
+            font-size: 0.95em;
+        }
+
+        /* ── CONTENT ── */
+        .content-wrap {
             max-width: 800px;
             margin: 0 auto;
-            padding: 60px 20px;
-            background: white;
+            padding: 60px 40px 80px;
         }
 
         .update-date {
-            color: #666;
-            font-size: 0.95em;
-            margin-bottom: 40px;
+            color: var(--text-muted);
+            font-size: 0.88em;
+            margin-bottom: 32px;
+            font-weight: 500;
         }
 
+        /* Highlight badge (amber) */
+        .highlight {
+            background: #fffbeb;
+            border-left: 4px solid #f59e0b;
+            padding: 20px 24px;
+            border-radius: 0 12px 12px 0;
+            margin: 32px 0;
+        }
+
+        .highlight strong {
+            color: #92400e;
+            font-weight: 600;
+        }
+
+        .highlight p, .highlight ul li {
+            color: #78350f;
+        }
+
+        /* Section headings */
         h2 {
-            color: #2c3e50;
-            margin-top: 40px;
-            margin-bottom: 20px;
-            font-size: 1.8em;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.7em;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-top: 52px;
+            margin-bottom: 16px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid rgba(124,77,204,0.12);
         }
 
         h3 {
-            color: #34495e;
-            margin-top: 30px;
-            margin-bottom: 15px;
-            font-size: 1.3em;
+            font-size: 1.1em;
+            font-weight: 600;
+            color: var(--purple-mid);
+            margin-top: 28px;
+            margin-bottom: 12px;
         }
 
         p {
-            margin-bottom: 15px;
-            color: #555;
+            color: #4a3d60;
+            margin-bottom: 14px;
+            font-size: 0.97em;
         }
+
+        a {
+            color: var(--purple-vivid);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        a:hover { text-decoration: underline; }
 
         ul {
-            margin: 15px 0 15px 40px;
+            margin: 12px 0 16px 0;
+            padding-left: 0;
+            list-style: none;
         }
 
-        li {
-            margin-bottom: 10px;
-            color: #555;
+        ul li {
+            color: #4a3d60;
+            font-size: 0.97em;
+            padding: 6px 0 6px 22px;
+            position: relative;
         }
 
-        .highlight {
-            background: #fff3cd;
-            padding: 20px;
-            border-left: 4px solid #ffc107;
-            margin: 30px 0;
-            border-radius: 4px;
+        ul li::before {
+            content: '·';
+            position: absolute;
+            left: 8px;
+            color: var(--purple-vivid);
+            font-weight: 700;
+            font-size: 1.2em;
+            line-height: 1.4;
         }
 
+        strong {
+            color: var(--text-dark);
+            font-weight: 600;
+        }
+
+        /* ── FOOTER ── */
         footer {
-            background: #2c3e50;
+            background: var(--text-dark);
             color: white;
-            padding: 30px 20px;
+            padding: 48px 40px 36px;
+        }
+
+        .footer-inner {
+            max-width: 800px;
+            margin: 0 auto;
             text-align: center;
         }
 
-        footer a {
-            color: white;
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .footer-logo img {
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+        }
+
+        .footer-logo-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3em;
+            font-weight: 700;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 28px;
+            margin-bottom: 24px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: rgba(255,255,255,0.6);
             text-decoration: none;
-            margin: 0 10px;
+            font-size: 0.9em;
+            transition: color 0.2s;
+            font-weight: 400;
+        }
+
+        .footer-links a:hover { color: white; }
+
+        .footer-divider {
+            border: none;
+            border-top: 1px solid rgba(255,255,255,0.08);
+            margin: 20px 0;
+        }
+
+        .footer-copy {
+            color: rgba(255,255,255,0.35);
+            font-size: 0.82em;
+        }
+
+        @media (max-width: 600px) {
+            header { padding: 48px 24px 40px; }
+            header h1 { font-size: 2em; }
+            .content-wrap { padding: 40px 24px 60px; }
         }
     </style>
 </head>
 <body>
+
     <header>
-        <h1>Termos de Serviço</h1>
-        <p>Portrait - Porta-Retratos Digital</p>
-        <a href="../" class="back-link">← Voltar para o site</a>
+        <div class="header-inner">
+            <a href="../" class="back-link">← Voltar para o site</a>
+            <div class="header-logo">
+                <img src="../../imagens/Portrait-logo.png" alt="Portrait" />
+                <span class="header-logo-name">Portrait</span>
+            </div>
+            <h1>Termos de Serviço</h1>
+            <p class="header-sub">Portrait — Porta-Retratos Digital para iPad</p>
+        </div>
     </header>
 
-    <div class="container">
+    <div class="content-wrap">
         <p class="update-date">Última atualização: 18 de maio de 2026</p>
 
         <p>Ao baixar, instalar ou usar o aplicativo Portrait ("App"), você concorda com estes Termos de Serviço. Se você não concordar com estes termos, não use o App.</p>
@@ -146,7 +317,7 @@
 
         <h3>3.1. Condições do Teste:</h3>
         <ul>
-            <li>O teste começa automaticamente - não é necessário cadastro ou cartão de crédito</li>
+            <li>O teste começa automaticamente — não é necessário cadastro ou cartão de crédito</li>
             <li>Durante o teste, você tem acesso total a todos os recursos premium</li>
             <li>O teste é válido por dispositivo e não pode ser reiniciado</li>
             <li>Desinstalar e reinstalar o App não reinicia o período de teste</li>
@@ -154,7 +325,7 @@
         </ul>
 
         <div class="highlight">
-            <strong>Importante:</strong> O teste grátis não se renova automaticamente e não há cobranças sem sua ação. Para continuar usando após o teste, você precisará fazer uma compra única dentro do App.
+            <p><strong>Importante:</strong> O teste grátis não se renova automaticamente e não há cobranças sem sua ação. Para continuar usando após o teste, você precisará fazer uma compra única dentro do App.</p>
         </div>
 
         <h2>4. Compras e Pagamentos</h2>
@@ -193,7 +364,7 @@
             <li><strong>Acesso à Biblioteca de Fotos:</strong> Para exibir suas fotos e vídeos no slideshow</li>
             <li><strong>Adicionar à Biblioteca:</strong> Para criar álbuns compartilhados (opcional)</li>
         </ul>
-        <p>Você pode revogar essas permissões a qualquer momento em Ajustes > Portrait > Fotos.</p>
+        <p>Você pode revogar essas permissões a qualquer momento em <strong>Ajustes &gt; Portrait &gt; Fotos</strong>.</p>
 
         <h2>7. Requisitos do Sistema</h2>
         <ul>
@@ -242,8 +413,8 @@
         <p>Se qualquer disposição destes Termos for considerada inválida, as demais disposições permanecerão em vigor. O não exercício de qualquer direito não constitui renúncia.</p>
 
         <div class="highlight">
-            <strong>Ao usar o Portrait, você confirma que:</strong>
-            <ul style="margin-top: 15px;">
+            <p><strong>Ao usar o Portrait, você confirma que:</strong></p>
+            <ul style="margin-top: 12px;">
                 <li>Leu e compreendeu estes Termos</li>
                 <li>Tem capacidade legal para aceitar este acordo</li>
                 <li>Concorda em cumprir todas as disposições aqui estabelecidas</li>
@@ -252,12 +423,22 @@
     </div>
 
     <footer>
-        <p>&copy; 2026 Portrait by Connecti. Todos os direitos reservados.</p>
-        <p style="margin-top: 15px;">
-            <a href="../">Início</a>
-            <a href="../privacidade/">Privacidade</a>
-            <a href="mailto:suporte@connecti.com.br">Suporte</a>
-        </p>
+        <div class="footer-inner">
+            <div class="footer-logo">
+                <img src="../../imagens/Portrait-logo.png" alt="Portrait" />
+                <span class="footer-logo-name">Portrait</span>
+            </div>
+
+            <div class="footer-links">
+                <a href="../">Início</a>
+                <a href="../privacidade/">Política de Privacidade</a>
+                <a href="mailto:suporte@connecti.com.br">Suporte</a>
+            </div>
+
+            <hr class="footer-divider" />
+            <p class="footer-copy">© 2026 Portrait by Connecti. Todos os direitos reservados.</p>
+        </div>
     </footer>
+
 </body>
 </html>
