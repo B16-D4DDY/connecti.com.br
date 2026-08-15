@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Política de Privacidade — Calculadora Privé</title>
+<meta name="description" content="Política de privacidade do app Calculadora Privé. Sem coleta de dados, sem conta, sem servidor.">
+<style>
+  :root{
+    --ink:#0F1218;--surface:#171B23;--line:#2C333F;
+    --accent:#22998C;--accent-bright:#2AB3A3;
+    --text:#E8EBEE;--text-dim:#98A2B3;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    background:var(--ink);color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif;
+    line-height:1.75;-webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:760px;margin:0 auto;padding:0 24px}
+  nav{
+    position:sticky;top:0;z-index:50;background:rgba(15,18,24,.85);
+    backdrop-filter:blur(14px);border-bottom:1px solid var(--line);
+  }
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:650;text-decoration:none;color:var(--text);letter-spacing:-.01em}
+  .mark{
+    width:30px;height:30px;border-radius:9px;
+    background:linear-gradient(135deg,var(--accent-bright),var(--accent));
+    display:grid;place-items:center;font-size:15px;font-weight:700;color:#fff;
+  }
+  .back{font-size:14px;color:var(--text-dim);text-decoration:none}
+  .back:hover{color:var(--accent-bright)}
+
+  header{padding:72px 0 40px;border-bottom:1px solid var(--line)}
+  h1{font-size:clamp(2rem,4.4vw,2.9rem);letter-spacing:-.03em;line-height:1.12;font-weight:700;margin-bottom:14px}
+  .updated{font-size:14px;color:var(--text-dim)}
+
+  main{padding:52px 0 72px}
+  .summary{
+    background:var(--surface);border:1px solid rgba(34,153,140,.3);
+    border-radius:18px;padding:28px 30px;margin-bottom:48px;
+  }
+  .summary h2{font-size:1.06rem;margin-bottom:12px;color:var(--accent-bright);border:0;padding:0}
+  .summary p{color:var(--text);margin:0}
+
+  h2{
+    font-size:1.28rem;letter-spacing:-.018em;font-weight:650;
+    margin:44px 0 14px;padding-top:26px;border-top:1px solid var(--line);
+  }
+  h2:first-of-type{margin-top:0}
+  h3{font-size:1.02rem;font-weight:650;margin:26px 0 8px}
+  p{color:var(--text-dim);margin-bottom:16px}
+  ul{color:var(--text-dim);margin:0 0 18px 22px}
+  li{margin-bottom:9px}
+  strong{color:var(--text);font-weight:600}
+  a{color:var(--accent-bright)}
+
+  footer{border-top:1px solid var(--line);padding:44px 0 40px}
+  .foot-links{display:flex;flex-wrap:wrap;gap:24px;font-size:14.5px;margin-bottom:24px}
+  .foot-links a{color:var(--text-dim);text-decoration:none}
+  .foot-links a:hover{color:var(--accent-bright)}
+  .copy{font-size:13.5px;color:var(--text-dim)}
+  @media (max-width:620px){header{padding:52px 0 32px}main{padding:40px 0 56px}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="/calculadora/"><span class="mark">C</span> Calculadora Privé</a>
+    <a class="back" href="/calculadora/">← Voltar</a>
+  </div>
+</nav>
+
+<header>
+  <div class="wrap">
+    <h1>Política de Privacidade</h1>
+    <p class="updated">Última atualização: 14 de agosto de 2026</p>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+
+    <div class="summary">
+      <h2>Resumo</h2>
+      <p>O Calculadora Privé não coleta, armazena nem transmite dados pessoais.
+         Não há conta, cadastro, login nem servidor. Tudo que você configura permanece
+         apenas no seu iPhone.</p>
+    </div>
+
+    <h2>1. Quem somos</h2>
+    <p>O aplicativo Calculadora Privé é desenvolvido e mantido por <strong>André Matos —
+       Connect Soluções em TI</strong>, com sede em Cotia, São Paulo, Brasil.</p>
+    <p>Contato: <a href="mailto:suporte@connecti.com.br">suporte@connecti.com.br</a></p>
+
+    <h2>2. Dados que não coletamos</h2>
+    <p>Para deixar claro antes de tudo, o aplicativo <strong>não coleta</strong>:</p>
+    <ul>
+      <li>Nome, e-mail, telefone ou qualquer dado de identificação</li>
+      <li>Localização</li>
+      <li>Contatos, fotos, mensagens ou arquivos</li>
+      <li>Histórico de navegação ou de uso de aplicativos</li>
+      <li>Identificadores de publicidade</li>
+      <li>Dados de análise, telemetria ou relatórios de falha</li>
+    </ul>
+    <p>Não utilizamos SDKs de terceiros para análise, publicidade ou rastreamento.
+       O aplicativo não realiza nenhuma conexão de rede própria.</p>
+
+    <h2>3. Dados que ficam no seu aparelho</h2>
+    <p>Algumas informações são necessárias para o funcionamento do aplicativo. Todas
+       permanecem exclusivamente no seu iPhone e nunca são enviadas para lugar nenhum:</p>
+
+    <h3>Códigos de acesso</h3>
+    <p>Seus códigos nunca são armazenados como você os digita. O aplicativo guarda apenas
+       uma representação criptográfica irreversível (hash com sal, derivado por PBKDF2),
+       protegida pelo Keychain do iOS. Não é possível recuperar o código original a partir
+       do que é armazenado — nem por nós.</p>
+
+    <h3>Seleção de aplicativos</h3>
+    <p>Quando você escolhe quais aplicativos proteger, o iOS entrega ao aplicativo apenas
+       identificadores anônimos, chamados de <em>tokens</em>. Por decisão de projeto da
+       Apple, <strong>nem o próprio aplicativo consegue saber quais programas você
+       selecionou</strong> — não temos acesso a nomes, ícones ou identificadores legíveis.</p>
+
+    <h3>Preferências</h3>
+    <p>Configurações como tempo de re-ocultação, sensibilidade do retorno rápido e bloqueio
+       automático são salvas localmente.</p>
+
+    <h2>4. Permissões do sistema</h2>
+
+    <h3>Tempo de Uso (Family Controls)</h3>
+    <p>O aplicativo solicita sua autorização para usar as APIs de Tempo de Uso da Apple
+       (<em>FamilyControls</em>, <em>ManagedSettings</em>). Essa autorização é o que permite
+       ocultar e revelar os aplicativos que você escolher. Ela é concedida por você, no
+       modo individual — você protegendo o seu próprio aparelho — e pode ser revogada a
+       qualquer momento em Ajustes › Tempo de Uso.</p>
+
+    <h3>Sensor de movimento</h3>
+    <p>O recurso de retorno rápido usa o acelerômetro para detectar quando você sacode o
+       aparelho. Os dados de movimento são processados na hora, apenas enquanto a tela de
+       configurações está aberta, e nunca são gravados nem transmitidos.</p>
+
+    <h2>5. Compras no aplicativo</h2>
+    <p>O desbloqueio completo é processado inteiramente pela Apple, através do sistema de
+       compras da App Store. Não recebemos, não vemos e não armazenamos dados de pagamento.
+       O aplicativo apenas consulta o sistema da Apple para saber se a compra existe.</p>
+    <p>O tratamento desses dados pelo processo de compra é regido pela política de
+       privacidade da Apple.</p>
+
+    <h2>6. Compartilhamento com terceiros</h2>
+    <p>Não compartilhamos, vendemos, alugamos nem cedemos dados a terceiros — pela razão
+       simples de que não coletamos nenhum dado que pudesse ser compartilhado.</p>
+
+    <h2>7. Crianças</h2>
+    <p>O aplicativo destina-se a pessoas maiores de 18 anos protegendo o próprio dispositivo.
+       Não coletamos conscientemente informações de crianças, nem de qualquer outra pessoa.</p>
+
+    <h2>8. Seus direitos (LGPD)</h2>
+    <p>A Lei Geral de Proteção de Dados assegura a você direitos de acesso, correção,
+       exclusão e portabilidade dos seus dados pessoais.</p>
+    <p>No caso deste aplicativo, esses direitos são atendidos de forma direta: como não há
+       coleta nem armazenamento remoto, não existem dados sob nossa posse. Para apagar tudo
+       que o aplicativo guarda no seu aparelho, use a opção <strong>Apagar configuração</strong>
+       dentro do app, ou simplesmente desinstale-o.</p>
+
+    <h2>9. Alterações nesta política</h2>
+    <p>Se esta política mudar, a nova versão será publicada nesta mesma página com a data de
+       atualização revisada. Mudanças relevantes também serão informadas nas notas de versão
+       do aplicativo na App Store.</p>
+
+    <h2>10. Contato</h2>
+    <p>Dúvidas sobre esta política ou sobre privacidade no aplicativo:
+       <a href="mailto:suporte@connecti.com.br">suporte@connecti.com.br</a></p>
+
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-links">
+      <a href="/calculadora/">Início</a>
+      <a href="/calculadora/termos/">Termos de Uso</a>
+      <a href="mailto:suporte@connecti.com.br">Suporte</a>
+      <a href="/">Connect Soluções em TI</a>
+    </div>
+    <p class="copy">© 2026 Calculadora Privé · Connect Soluções em TI · Cotia, SP</p>
+  </div>
+</footer>
+
+</body>
+</html>

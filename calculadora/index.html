@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculadora Privé — Seu espaço privado no iPhone</title>
+<meta name="description" content="Uma calculadora comum por fora. Por dentro, você decide quais aplicativos ficam visíveis no seu iPhone.">
+<meta property="og:title" content="Calculadora Privé — Seu espaço privado no iPhone">
+<meta property="og:description" content="Escolha quais aplicativos ficam fora da tela de início. Protegidos por um código só seu.">
+<meta property="og:type" content="website">
+<style>
+  :root{
+    --ink:#0F1218;
+    --surface:#171B23;
+    --surface-2:#1E2430;
+    --line:#2C333F;
+    --accent:#22998C;
+    --accent-bright:#2AB3A3;
+    --text:#E8EBEE;
+    --text-dim:#98A2B3;
+    --radius:22px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--ink);
+    color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+  a{color:inherit}
+
+  /* Navegação */
+  nav{
+    position:sticky;top:0;z-index:50;
+    background:rgba(15,18,24,.82);
+    backdrop-filter:blur(14px);
+    border-bottom:1px solid var(--line);
+  }
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:650;letter-spacing:-.01em;text-decoration:none}
+  .mark{
+    width:30px;height:30px;border-radius:9px;
+    background:linear-gradient(135deg,var(--accent-bright),var(--accent));
+    display:grid;place-items:center;font-size:15px;font-weight:700;color:#fff;
+  }
+  .nav-cta{
+    font-size:14px;text-decoration:none;padding:9px 18px;border-radius:999px;
+    background:var(--accent);color:#fff;font-weight:600;
+    transition:background .2s;
+  }
+  .nav-cta:hover{background:var(--accent-bright)}
+
+  /* Hero */
+  header{padding:96px 0 80px;position:relative;overflow:hidden}
+  header::before{
+    content:"";position:absolute;inset:0;
+    background:radial-gradient(900px 420px at 50% -12%,rgba(34,153,140,.16),transparent 70%);
+    pointer-events:none;
+  }
+  .eyebrow{
+    display:inline-block;font-size:12.5px;letter-spacing:.09em;text-transform:uppercase;
+    color:var(--accent-bright);border:1px solid rgba(34,153,140,.34);
+    padding:6px 14px;border-radius:999px;margin-bottom:28px;font-weight:600;
+  }
+  h1{
+    font-size:clamp(2.3rem,5.6vw,4rem);line-height:1.07;letter-spacing:-.032em;
+    font-weight:700;max-width:17ch;margin-bottom:24px;
+  }
+  h1 em{font-style:normal;color:var(--accent-bright)}
+  .lede{font-size:clamp(1.02rem,2vw,1.2rem);color:var(--text-dim);max-width:56ch;margin-bottom:36px}
+  .btn{
+    display:inline-block;text-decoration:none;font-weight:650;
+    padding:15px 30px;border-radius:999px;transition:transform .18s,background .18s;
+  }
+  .btn-primary{background:var(--accent);color:#fff}
+  .btn-primary:hover{background:var(--accent-bright);transform:translateY(-1px)}
+  .note{font-size:14px;color:var(--text-dim);margin-top:16px}
+
+  /* Demonstração do teclado */
+  .demo{
+    margin-top:64px;background:var(--surface);border:1px solid var(--line);
+    border-radius:28px;padding:34px;max-width:400px;
+  }
+  .display{
+    text-align:right;font-size:2.6rem;font-weight:300;letter-spacing:-.02em;
+    padding:6px 10px 22px;font-variant-numeric:tabular-nums;
+  }
+  .keys{display:grid;grid-template-columns:repeat(4,1fr);gap:9px}
+  .key{
+    aspect-ratio:1;border-radius:var(--radius);background:var(--surface-2);
+    display:grid;place-items:center;font-size:1.25rem;font-weight:500;
+    color:var(--text);border:none;font-family:inherit;
+  }
+  .key.fn{background:var(--line)}
+  .key.op{background:var(--accent);color:#fff}
+  .demo-caption{
+    margin-top:22px;font-size:14px;color:var(--text-dim);
+    border-top:1px solid var(--line);padding-top:18px;
+  }
+  .demo-caption b{color:var(--accent-bright);font-weight:600}
+
+  /* Seções */
+  section{padding:84px 0;border-top:1px solid var(--line)}
+  .kicker{
+    font-size:12.5px;letter-spacing:.09em;text-transform:uppercase;
+    color:var(--accent-bright);font-weight:650;margin-bottom:14px;
+  }
+  h2{font-size:clamp(1.7rem,3.4vw,2.5rem);letter-spacing:-.026em;line-height:1.15;margin-bottom:16px;font-weight:700}
+  .sub{color:var(--text-dim);max-width:60ch;margin-bottom:48px}
+
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(272px,1fr));gap:18px}
+  .card{
+    background:var(--surface);border:1px solid var(--line);
+    border-radius:20px;padding:28px;transition:border-color .2s;
+  }
+  .card:hover{border-color:rgba(34,153,140,.42)}
+  .card .ico{font-size:1.5rem;margin-bottom:14px;display:block}
+  .card h3{font-size:1.06rem;margin-bottom:8px;font-weight:650;letter-spacing:-.012em}
+  .card p{color:var(--text-dim);font-size:15px}
+
+  /* Passos */
+  .steps{display:grid;gap:2px;background:var(--line);border:1px solid var(--line);border-radius:20px;overflow:hidden}
+  .step{background:var(--surface);padding:28px 30px;display:flex;gap:22px;align-items:flex-start}
+  .step .n{
+    flex:0 0 34px;height:34px;border-radius:11px;background:rgba(34,153,140,.15);
+    color:var(--accent-bright);display:grid;place-items:center;font-weight:700;font-size:15px;
+  }
+  .step h3{font-size:1.03rem;margin-bottom:5px;font-weight:650}
+  .step p{color:var(--text-dim);font-size:15px}
+
+  /* Preço */
+  .price-card{
+    background:var(--surface);border:1px solid var(--line);border-radius:24px;
+    padding:44px;max-width:460px;
+  }
+  .price{font-size:2.9rem;font-weight:700;letter-spacing:-.03em;line-height:1}
+  .price small{display:block;font-size:14px;font-weight:400;color:var(--text-dim);margin-top:10px;letter-spacing:0}
+  .price-list{list-style:none;margin:30px 0;display:grid;gap:12px}
+  .price-list li{padding-left:28px;position:relative;font-size:15px;color:var(--text-dim)}
+  .price-list li::before{content:"✓";position:absolute;left:0;color:var(--accent-bright);font-weight:700}
+  .price-list li.free{color:var(--text)}
+
+  /* Rodapé */
+  footer{border-top:1px solid var(--line);padding:56px 0 40px}
+  .foot-top{display:flex;flex-wrap:wrap;gap:28px;justify-content:space-between;align-items:flex-start;margin-bottom:36px}
+  .foot-links{display:flex;flex-wrap:wrap;gap:24px;font-size:14.5px}
+  .foot-links a{color:var(--text-dim);text-decoration:none;transition:color .2s}
+  .foot-links a:hover{color:var(--accent-bright)}
+  .copy{font-size:13.5px;color:var(--text-dim);border-top:1px solid var(--line);padding-top:26px}
+
+  @media (max-width:620px){
+    header{padding:64px 0 56px}
+    section{padding:60px 0}
+    .demo{padding:24px}
+    .price-card{padding:30px}
+    .step{padding:24px}
+  }
+  @media (prefers-reduced-motion:reduce){
+    *{animation:none!important;transition:none!important}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="/calculadora/">
+      <span class="mark">C</span> Calculadora Privé
+    </a>
+    <a class="nav-cta" href="#baixar">Baixar</a>
+  </div>
+</nav>
+
+<header>
+  <div class="wrap">
+    <span class="eyebrow">Para iPhone · iOS 17.6+</span>
+    <h1>Por fora, uma calculadora. Por dentro, <em>o seu espaço</em>.</h1>
+    <p class="lede">
+      Escolha quais aplicativos ficam fora da tela de início e da busca do seu iPhone.
+      Eles continuam instalados, com todos os dados intactos — só voltam a aparecer
+      quando você digita o seu código.
+    </p>
+    <a class="btn btn-primary" href="#baixar" id="baixar">Baixar na App Store</a>
+    <p class="note">Gratuito para até 3 aplicativos · Sem conta, sem cadastro</p>
+
+    <div class="demo">
+      <div class="display">1357</div>
+      <div class="keys">
+        <span class="key fn">C</span>
+        <span class="key fn">±</span>
+        <span class="key fn">%</span>
+        <span class="key op">÷</span>
+        <span class="key">7</span>
+        <span class="key">8</span>
+        <span class="key">9</span>
+        <span class="key op">×</span>
+        <span class="key">4</span>
+        <span class="key">5</span>
+        <span class="key">6</span>
+        <span class="key op">−</span>
+        <span class="key">1</span>
+        <span class="key">2</span>
+        <span class="key">3</span>
+        <span class="key op">+</span>
+      </div>
+      <p class="demo-caption">
+        Digite o seu código e toque em <b>=</b> para abrir suas configurações.
+        Qualquer outra sequência faz a conta normalmente.
+      </p>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <p class="kicker">Como funciona</p>
+    <h2>Três passos, uma vez só</h2>
+    <p class="sub">Depois disso, é só usar a calculadora.</p>
+
+    <div class="steps">
+      <div class="step">
+        <span class="n">1</span>
+        <div>
+          <h3>Crie os seus códigos</h3>
+          <p>Um código principal, que abre suas configurações, e um código alternativo,
+             que abre uma tela sem informação nenhuma. Nenhum dos dois tem relação com a
+             senha de desbloqueio do iPhone.</p>
+        </div>
+      </div>
+      <div class="step">
+        <span class="n">2</span>
+        <div>
+          <h3>Escolha os aplicativos</h3>
+          <p>Use o seletor do próprio iOS para marcar o que deve ficar fora da tela de
+             início. Por decisão da Apple, nem o app tem acesso a essa lista.</p>
+        </div>
+      </div>
+      <div class="step">
+        <span class="n">3</span>
+        <div>
+          <h3>Pronto</h3>
+          <p>Os aplicativos saem da tela de início e da busca. Para revelá-los, digite
+             seu código na calculadora e toque em %.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <p class="kicker">Recursos</p>
+    <h2>Pensado para o dia a dia</h2>
+    <p class="sub">Discreto quando precisa ser. Prático o tempo todo.</p>
+
+    <div class="grid">
+      <div class="card">
+        <span class="ico">🧮</span>
+        <h3>Calculadora de verdade</h3>
+        <p>Funciona como qualquer outra. Nada na tela indica que existe algo além dela.</p>
+      </div>
+      <div class="card">
+        <span class="ico">🔐</span>
+        <h3>Código independente</h3>
+        <p>Seu código não tem relação com a senha do iPhone. Saber uma não dá acesso à outra.</p>
+      </div>
+      <div class="card">
+        <span class="ico">📱</span>
+        <h3>Código alternativo</h3>
+        <p>Um segundo código abre uma tela vazia, sem revelar que existe outra configuração.</p>
+      </div>
+      <div class="card">
+        <span class="ico">⏱️</span>
+        <h3>Volta a ocultar sozinho</h3>
+        <p>Escolha o tempo e os aplicativos somem de novo automaticamente, mesmo com o app fechado.</p>
+      </div>
+      <div class="card">
+        <span class="ico">🌀</span>
+        <h3>Retorno rápido</h3>
+        <p>Sacuda o aparelho e volte à calculadora na hora, sem confirmação nem aviso.</p>
+      </div>
+      <div class="card">
+        <span class="ico">🔒</span>
+        <h3>Nada sai do aparelho</h3>
+        <p>Sem conta, sem servidor, sem coleta. Sua configuração existe apenas no seu iPhone.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <p class="kicker">Preço</p>
+    <h2>Simples e justo</h2>
+    <p class="sub">
+      Sem assinatura. Todos os recursos de segurança são gratuitos para sempre —
+      o pagamento único apenas amplia quantos aplicativos você pode proteger.
+    </p>
+
+    <div class="price-card">
+      <div class="price">
+        R$ 39,90
+        <small>Pagamento único · Acesso vitalício</small>
+      </div>
+      <ul class="price-list">
+        <li class="free">Grátis: proteja até 3 aplicativos</li>
+        <li class="free">Grátis: os dois códigos de acesso</li>
+        <li class="free">Grátis: retorno rápido e bloqueio automático</li>
+        <li>Completo: até 50 aplicativos</li>
+        <li>Sem anúncios, para sempre</li>
+        <li>Atualizações futuras incluídas</li>
+      </ul>
+      <a class="btn btn-primary" href="#baixar">Baixar na App Store</a>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <p class="kicker">Antes de instalar</p>
+    <h2>O que você precisa saber</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Autorização do Tempo de Uso</h3>
+        <p>O app usa as APIs oficiais de Tempo de Uso da Apple e pede sua autorização
+           na primeira execução.</p>
+      </div>
+      <div class="card">
+        <h3>Apps nativos não são compatíveis</h3>
+        <p>Carteira, Senhas, Telefone e Ajustes não podem ser ocultados. Selecione apenas
+           aplicativos que você instalou.</p>
+      </div>
+      <div class="card">
+        <h3>Senha do Tempo de Uso</h3>
+        <p>Configure uma senha de Tempo de Uso diferente da senha do iPhone. O app explica
+           como fazer isso durante a configuração inicial.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <a class="brand" href="/calculadora/">
+        <span class="mark">C</span> Calculadora Privé
+      </a>
+      <div class="foot-links">
+        <a href="/calculadora/termos/">Termos de Uso</a>
+        <a href="/calculadora/privacidade/">Política de Privacidade</a>
+        <a href="mailto:suporte@connecti.com.br">Suporte</a>
+        <a href="/">Connect Soluções em TI</a>
+      </div>
+    </div>
+    <p class="copy">© 2026 Calculadora Privé · Connect Soluções em TI · Cotia, SP</p>
+  </div>
+</footer>
+
+</body>
+</html>
