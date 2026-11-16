@@ -8,6 +8,8 @@
 <meta property="og:title" content="Calculadora Privé — Proteja seus apps">
 <meta property="og:description" content="Escolha quais aplicativos ficam fora da tela de início. Protegidos por um código só seu.">
 <meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta name="apple-itunes-app" content="app-id=6800547443">
 <style>
   :root{
     --ink:#0F1218;
@@ -96,6 +98,7 @@
   }
   .key.fn{background:var(--line)}
   .key.op{background:var(--accent);color:#fff}
+  .key.wide{grid-column:span 2;aspect-ratio:auto}
   .demo-caption{
     margin-top:22px;font-size:14px;color:var(--text-dim);
     border-top:1px solid var(--line);padding-top:18px;
@@ -170,25 +173,25 @@
     <a class="brand" href="/calculadora/">
       <span class="mark">C</span> Calculadora Privé
     </a>
-    <a class="nav-cta" href="https://apps.apple.com/us/app/calculadora-priv%C3%A9/id6800547443">Baixar</a>
+    <a class="nav-cta" href="https://apps.apple.com/br/app/calculadora-priv%C3%A9/id6800547443">Baixar</a>
   </div>
 </nav>
 
 <header>
   <div class="wrap">
-    <span class="eyebrow">Para iPhone · iOS 17+</span>
+    <span class="eyebrow">Para iPhone · iOS 17.6+</span>
     <h1>Por fora, uma calculadora. Por dentro, <em>o seu espaço</em>.</h1>
     <p class="lede">
       Escolha quais aplicativos ficam fora da tela de início e da busca do seu iPhone.
       Eles continuam instalados, com todos os dados intactos — só voltam a aparecer
       quando você digita o seu código.
     </p>
-    <a class="btn btn-primary" href="https://apps.apple.com/us/app/calculadora-priv%C3%A9/id6800547443" id="baixar">Baixar na App Store</a>
-    <p class="note">Gratuito para até 3 aplicativos · Sem conta, sem cadastro</p>
+    <a class="btn btn-primary" href="https://apps.apple.com/br/app/calculadora-priv%C3%A9/id6800547443" id="baixar">Baixar na App Store</a>
+    <p class="note">Gratuito para até 3 aplicativos · Sem anúncios · Sem conta, sem cadastro</p>
 
     <div class="demo">
       <div class="display">1357</div>
-      <div class="keys">
+      <div class="keys" aria-hidden="true">
         <span class="key fn">C</span>
         <span class="key fn">±</span>
         <span class="key fn">%</span>
@@ -205,6 +208,9 @@
         <span class="key">2</span>
         <span class="key">3</span>
         <span class="key op">+</span>
+        <span class="key wide">0</span>
+        <span class="key">,</span>
+        <span class="key op">=</span>
       </div>
       <p class="demo-caption">
         Digite o seu código e toque em <b>=</b> para abrir suas configurações.
@@ -226,8 +232,8 @@
         <div>
           <h3>Crie os seus códigos</h3>
           <p>Um código principal, que abre suas configurações, e um código alternativo,
-             que abre uma tela sem informação nenhuma. Nenhum dos dois tem relação com a
-             senha de desbloqueio do iPhone.</p>
+             para quando alguém exigir que você abra o app. Nenhum dos dois tem relação
+             com a senha de desbloqueio do iPhone.</p>
         </div>
       </div>
       <div class="step">
@@ -260,7 +266,7 @@
       <div class="card">
         <span class="ico">🧮</span>
         <h3>Calculadora de verdade</h3>
-        <p>Funciona como qualquer outra. Nada na tela indica que existe algo além dela.</p>
+        <p>Funciona como qualquer outra, com vírgula, separador de milhar e contas encadeadas. Nada na tela indica que existe algo além dela.</p>
       </div>
       <div class="card">
         <span class="ico">🔐</span>
@@ -270,7 +276,7 @@
       <div class="card">
         <span class="ico">📱</span>
         <h3>Código alternativo</h3>
-        <p>Um segundo código abre uma tela vazia, sem revelar que existe outra configuração.</p>
+        <p>Para quando alguém exigir que você abra o app. Use o segundo código e seus aplicativos continuam protegidos.</p>
       </div>
       <div class="card">
         <span class="ico">⏱️</span>
@@ -308,12 +314,12 @@
       <ul class="price-list">
         <li class="free">Grátis: proteja até 3 aplicativos</li>
         <li class="free">Grátis: os dois códigos de acesso</li>
-        <li class="free">Grátis: retorno rápido e bloqueio automático</li>
+        <li class="free">Grátis: retorno rápido e ocultação automática</li>
+        <li class="free">Grátis: sem anúncios</li>
         <li>Completo: até 50 aplicativos</li>
-        <li>Sem anúncios, para sempre</li>
         <li>Atualizações futuras incluídas</li>
       </ul>
-      <a class="btn btn-primary" href="https://apps.apple.com/us/app/calculadora-priv%C3%A9/id6800547443">Baixar na App Store</a>
+      <a class="btn btn-primary" href="https://apps.apple.com/br/app/calculadora-priv%C3%A9/id6800547443">Baixar na App Store</a>
     </div>
   </div>
 </section>
@@ -329,9 +335,15 @@
            na primeira execução.</p>
       </div>
       <div class="card">
-        <h3>Apps nativos não são compatíveis</h3>
-        <p>Carteira, Senhas, Telefone e Ajustes não podem ser ocultados. Selecione apenas
-           aplicativos que você instalou.</p>
+        <h3>Apps nativos do iPhone</h3>
+        <p>Alguns aplicativos que vêm com o iPhone podem não responder de forma
+           consistente a este recurso. Os aplicativos que você instalou funcionam
+           normalmente.</p>
+      </div>
+      <div class="card">
+        <h3>Posição na tela de início</h3>
+        <p>Quem decide onde os aplicativos reaparecem é o iOS. No iOS 27, eles voltam
+           para o fim da tela de início, e não para a posição original.</p>
       </div>
       <div class="card">
         <h3>Senha do Tempo de Uso</h3>
