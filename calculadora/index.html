@@ -44,16 +44,18 @@
   nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
   .brand{display:flex;align-items:center;gap:10px;font-weight:650;letter-spacing:-.01em;text-decoration:none}
   .mark{
-    width:30px;height:30px;border-radius:9px;
-    background:linear-gradient(135deg,var(--accent-bright),var(--accent));
-    display:grid;place-items:center;font-size:15px;font-weight:700;color:#fff;
+    width:30px;height:30px;border-radius:9px;padding:6px;gap:3px;
+    background:var(--surface-2);border:1px solid var(--line);
+    display:grid;grid-template-columns:1fr 1fr;
   }
+  .mark i{border-radius:3px;background:var(--line)}
+  .mark i:last-child{background:var(--accent-bright)}
   .nav-cta{
     font-size:14px;text-decoration:none;padding:9px 18px;border-radius:999px;
-    background:var(--accent);color:#fff;font-weight:600;
+    background:var(--accent-bright);color:var(--ink);font-weight:600;
     transition:background .2s;
   }
-  .nav-cta:hover{background:var(--accent-bright)}
+  .nav-cta:hover{background:#5FD0C2}
 
   /* Hero */
   header{padding:96px 0 80px;position:relative;overflow:hidden}
@@ -77,8 +79,8 @@
     display:inline-block;text-decoration:none;font-weight:650;
     padding:15px 30px;border-radius:999px;transition:transform .18s,background .18s;
   }
-  .btn-primary{background:var(--accent);color:#fff}
-  .btn-primary:hover{background:var(--accent-bright);transform:translateY(-1px)}
+  .btn-primary{background:var(--accent-bright);color:var(--ink)}
+  .btn-primary:hover{background:#5FD0C2;transform:translateY(-1px)}
   .note{font-size:14px;color:var(--text-dim);margin-top:16px}
 
   /* Demonstração do teclado */
@@ -97,7 +99,7 @@
     color:var(--text);border:none;font-family:inherit;
   }
   .key.fn{background:var(--line)}
-  .key.op{background:var(--accent);color:#fff}
+  .key.op{background:var(--accent-bright);color:var(--ink)}
   .key.wide{grid-column:span 2;aspect-ratio:auto}
   .demo-caption{
     margin-top:22px;font-size:14px;color:var(--text-dim);
@@ -120,7 +122,23 @@
     border-radius:20px;padding:28px;transition:border-color .2s;
   }
   .card:hover{border-color:rgba(34,153,140,.42)}
-  .card .ico{font-size:1.5rem;margin-bottom:14px;display:block}
+  .card .ico{
+    width:44px;height:44px;padding:9px;margin-bottom:16px;display:block;
+    border-radius:12px;background:#17322F;color:var(--accent-bright);
+  }
+  .card.new{border-color:rgba(42,179,163,.5);background:#13231F}
+  .badge{
+    display:inline-block;font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;font-weight:700;
+    color:var(--ink);background:var(--accent-bright);border-radius:999px;padding:3px 10px;margin-left:8px;
+    vertical-align:2px;
+  }
+  .news{
+    display:inline-flex;align-items:center;gap:10px;margin-bottom:22px;
+    font-size:14px;color:var(--text);text-decoration:none;
+    background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:6px 14px 6px 6px;
+  }
+  .news .badge{margin-left:0;vertical-align:0}
+  .news:hover{border-color:rgba(42,179,163,.5)}
   .card h3{font-size:1.06rem;margin-bottom:8px;font-weight:650;letter-spacing:-.012em}
   .card p{color:var(--text-dim);font-size:15px}
 
@@ -171,7 +189,7 @@
 <nav>
   <div class="wrap">
     <a class="brand" href="/calculadora/">
-      <span class="mark">C</span> Calculadora Privé
+      <span class="mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span> Calculadora Privé
     </a>
     <a class="nav-cta" href="https://apps.apple.com/br/app/calculadora-priv%C3%A9/id6800547443">Baixar</a>
   </div>
@@ -179,6 +197,7 @@
 
 <header>
   <div class="wrap">
+    <a class="news" href="#recursos"><span class="badge">Novo</span> Mostre um app de cada vez, por tempo definido</a><br>
     <span class="eyebrow">Para iPhone · iOS 17.6+</span>
     <h1>Por fora, uma calculadora. Por dentro, <em>o seu espaço</em>.</h1>
     <p class="lede">
@@ -256,40 +275,45 @@
   </div>
 </section>
 
-<section>
+<section id="recursos">
   <div class="wrap">
     <p class="kicker">Recursos</p>
     <h2>Pensado para o dia a dia</h2>
     <p class="sub">Discreto quando precisa ser. Prático o tempo todo.</p>
 
     <div class="grid">
+      <div class="card new">
+        <svg class="ico" aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+        <h3>Um app de cada vez <span class="badge">Novo</span></h3>
+        <p>Precisa só do banco? Mostre um único app por 5, 15 ou 30 minutos ou 1 hora, e os outros continuam protegidos. Na versão completa.</p>
+      </div>
       <div class="card">
-        <span class="ico">🧮</span>
+        <svg class="ico" aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="2.5"/><path d="M8 7h8"/><path d="M8 11h.01M12 11h.01M16 11h.01M8 15h.01M12 15h.01M16 15h.01M8 18h.01M12 18h.01M16 18h.01"/></svg>
         <h3>Calculadora de verdade</h3>
         <p>Funciona como qualquer outra, com vírgula, separador de milhar e contas encadeadas. Nada na tela indica que existe algo além dela.</p>
       </div>
       <div class="card">
-        <span class="ico">🔐</span>
+        <svg class="ico" aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
         <h3>Código independente</h3>
         <p>Seu código não tem relação com a senha do iPhone. Saber uma não dá acesso à outra.</p>
       </div>
       <div class="card">
-        <span class="ico">📱</span>
+        <svg class="ico" aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 8.3-7 10-4-1.7-7-5.5-7-10V6z"/><path d="M9.5 12l2 2 3.5-4"/></svg>
         <h3>Código alternativo</h3>
         <p>Para quando alguém exigir que você abra o app. Use o segundo código e seus aplicativos continuam protegidos.</p>
       </div>
       <div class="card">
-        <span class="ico">⏱️</span>
+        <svg class="ico" aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2 2"/><path d="M9 2h6"/></svg>
         <h3>Volta a ocultar sozinho</h3>
-        <p>Escolha o tempo e os aplicativos somem de novo automaticamente, mesmo com o app fechado.</p>
+        <p>Escolha o tempo, a partir de 5 minutos, e os aplicativos somem de novo automaticamente, mesmo com o app fechado.</p>
       </div>
       <div class="card">
-        <span class="ico">🌀</span>
+        <svg class="ico" aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="3" width="10" height="18" rx="2"/><path d="M3 8v8"/><path d="M21 8v8"/></svg>
         <h3>Retorno rápido</h3>
-        <p>Sacuda o aparelho e volte à calculadora na hora, sem confirmação nem aviso.</p>
+        <p>Sacuda o aparelho ou puxe o título da tela e volte à calculadora na hora, sem confirmação nem aviso.</p>
       </div>
       <div class="card">
-        <span class="ico">🔒</span>
+        <svg class="ico" aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94"/><path d="M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19"/><path d="M1 1l22 22"/></svg>
         <h3>Nada sai do aparelho</h3>
         <p>Sem conta, sem servidor, sem coleta. Sua configuração existe apenas no seu iPhone.</p>
       </div>
@@ -303,7 +327,8 @@
     <h2>Simples e justo</h2>
     <p class="sub">
       Sem assinatura. Todos os recursos de segurança são gratuitos para sempre —
-      o pagamento único apenas amplia quantos aplicativos você pode proteger.
+      o pagamento único amplia quantos aplicativos você pode proteger e libera
+      mostrar um app de cada vez.
     </p>
 
     <div class="price-card">
@@ -317,6 +342,7 @@
         <li class="free">Grátis: retorno rápido e ocultação automática</li>
         <li class="free">Grátis: sem anúncios</li>
         <li>Completo: até 50 aplicativos</li>
+        <li>Completo: mostrar um app de cada vez, por tempo definido</li>
         <li>Atualizações futuras incluídas</li>
       </ul>
       <a class="btn btn-primary" href="https://apps.apple.com/br/app/calculadora-priv%C3%A9/id6800547443">Baixar na App Store</a>
@@ -358,7 +384,7 @@
   <div class="wrap">
     <div class="foot-top">
       <a class="brand" href="/calculadora/">
-        <span class="mark">C</span> Calculadora Privé
+        <span class="mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span> Calculadora Privé
       </a>
       <div class="foot-links">
         <a href="/calculadora/termos/">Termos de Uso</a>
