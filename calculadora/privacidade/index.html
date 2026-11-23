@@ -25,10 +25,12 @@
   nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
   .brand{display:flex;align-items:center;gap:10px;font-weight:650;text-decoration:none;color:var(--text);letter-spacing:-.01em}
   .mark{
-    width:30px;height:30px;border-radius:9px;
-    background:linear-gradient(135deg,var(--accent-bright),var(--accent));
-    display:grid;place-items:center;font-size:15px;font-weight:700;color:#fff;
+    width:30px;height:30px;border-radius:9px;padding:6px;gap:3px;
+    background:#1E2430;border:1px solid var(--line);
+    display:grid;grid-template-columns:1fr 1fr;
   }
+  .mark i{border-radius:3px;background:var(--line)}
+  .mark i:last-child{background:var(--accent-bright)}
   .back{font-size:14px;color:var(--text-dim);text-decoration:none}
   .back:hover{color:var(--accent-bright)}
 
@@ -68,7 +70,7 @@
 
 <nav>
   <div class="wrap">
-    <a class="brand" href="/calculadora/"><span class="mark">C</span> Calculadora Privé</a>
+    <a class="brand" href="/calculadora/"><span class="mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span> Calculadora Privé</a>
     <a class="back" href="/calculadora/">← Voltar</a>
   </div>
 </nav>
@@ -76,7 +78,7 @@
 <header>
   <div class="wrap">
     <h1>Política de Privacidade</h1>
-    <p class="updated">Última atualização: 14 de agosto de 2026</p>
+    <p class="updated">Última atualização: 23 de novembro de 2026</p>
   </div>
 </header>
 
@@ -107,6 +109,11 @@
     </ul>
     <p>Não utilizamos SDKs de terceiros para análise, publicidade ou rastreamento.
        O aplicativo não realiza nenhuma conexão de rede própria.</p>
+    <p>Se você permitir, nos Ajustes do iPhone, o compartilhamento de análises com
+       desenvolvedores, a Apple pode nos fornecer relatórios de falha anônimos, conforme a
+       política de privacidade da Apple. Esse envio é feito pelo próprio iOS, depende da sua
+       autorização e pode ser desligado a qualquer momento em Ajustes › Privacidade e
+       Segurança › Análise e Melhorias.</p>
 
     <h2>3. Dados que ficam no seu aparelho</h2>
     <p>Algumas informações são necessárias para o funcionamento do aplicativo. Todas
@@ -117,16 +124,22 @@
        uma representação criptográfica irreversível (hash com sal, derivado por PBKDF2),
        protegida pelo Keychain do iOS. Não é possível recuperar o código original a partir
        do que é armazenado — nem por nós.</p>
+    <p>Os códigos ficam apenas no aparelho em que foram criados e não são transferidos para
+       outro iPhone, nem por backup.</p>
 
     <h3>Seleção de aplicativos</h3>
     <p>Quando você escolhe quais aplicativos proteger, o iOS entrega ao aplicativo apenas
        identificadores anônimos, chamados de <em>tokens</em>. Por decisão de projeto da
        Apple, <strong>nem o próprio aplicativo consegue saber quais programas você
        selecionou</strong> — não temos acesso a nomes, ícones ou identificadores legíveis.</p>
+    <p>Na tela de configurações, o nome e o ícone de cada aplicativo protegido são exibidos
+       pelo próprio iOS, a partir desses identificadores, somente na sua tela. O aplicativo
+       não consegue ler, guardar nem transmitir essas informações.</p>
 
     <h3>Preferências</h3>
     <p>Configurações como tempo de re-ocultação, sensibilidade do retorno rápido e bloqueio
-       automático são salvas localmente.</p>
+       automático são salvas localmente, assim como quais aplicativos estão visíveis
+       temporariamente e até quando.</p>
 
     <h2>4. Permissões do sistema</h2>
 
