@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://connecti.com.br/sitemap.xml
